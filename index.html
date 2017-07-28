@@ -9,10 +9,9 @@
 </head>
 <body>
 <button id="showModalButton">Show modal</button>
-<div class="modal-window" id="modal-window">
-    <div class="modal-header"> Some title</div>
-    <div class="modal-component-body" include></div>
-    <div class="modal-footer"> Some footer</div>
+<div class="modal-window"
+     id="modal-window"
+     include>
 </div>
 <script>
     angular.module('myApp', []).directive('include', function () {
