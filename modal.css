@@ -1,0 +1,33 @@
+.modal-window {
+    display: none;
+    width: 600px;
+    background: #f9f9f9;
+    border: 2px solid gray;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px 5000px rgba(0,0,0,.5);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 630px;
+    min-width: 320px;
+
+    z-index: 2000;
+
+
+    transform: translateX(-50%) translateY(-50%);
+}
+.modal-header {
+    border-bottom: 1px solid gray;
+}
+.modal-component-body {
+    padding-bottom: 30px;
+}
+.modal-footer {
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid gray;
+    width: 100%;
+}

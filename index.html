@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="modal.css">
+</head>
+<body>
+<button id="showModalButton" ng-click="$ctrl.showModal()">Show modal</button>
+<div class="modal-window" id="modal-window">
+    <div class="modal-header"> Some title</div>
+    <div class="modal-component-body" include></div>
+    <div class="modal-footer"> Some footer</div>
+</div>
+<script>
+    angular.module('myApp', []).directive('include', function () {
+        return {
+            transclude: true,
+            template: `<div ng-transclude>  </div> <my-component></my-component>`,
+        }
+    });
+    angular.module('myApp').component('myComponent', {
+        templateUrl: 'example.component.html',
+        controller: function () {
+            this.clickMe = function () {
+                window.alert("Triggered from component");
+            }
+        },
+        controllerAs: '$modalCtrl'
+    });
+</script>
+<script src="modal.js"></script>
+</body>
+</html>
