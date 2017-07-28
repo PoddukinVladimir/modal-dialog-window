@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="modal.css">
 </head>
 <body>
-<button id="showModalButton" ng-click="$ctrl.showModal()">Show modal</button>
+<button id="showModalButton">Show modal</button>
 <div class="modal-window" id="modal-window">
     <div class="modal-header"> Some title</div>
     <div class="modal-component-body" include></div>
@@ -18,7 +18,7 @@
     angular.module('myApp', []).directive('include', function () {
         return {
             transclude: true,
-            template: `<div ng-transclude>  </div> <my-component></my-component>`,
+            template: `<div ng-transclude> </div> <my-component></my-component>`,
         }
     });
     angular.module('myApp').component('myComponent', {
